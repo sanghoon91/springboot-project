@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.up-area{
+	width: 900px;
+	
+	padding: 30px 0;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+.logo>i>a{
+	font-size: 25px;
+	font-weight: bold;
+	color: blue;
+}
+.up-area>.up-right-area>a:nth-of-type(1){
+	margin-right: 20px;
+}
+.up-area>.up-right-area>a{
+	height: 25px;
+	text-align: center;
+	line-height: 25px;	
+}
+
+.down-area > ul > li{
+	list-style-type: none;
+}
+
+.up-right-area{
+	
+	top:20px;
+	right: -10px;
+	
+}
+.down-area>.flex li span a{
+	
+	display: inline-block;
+	line-height: 54px;
+	font-size: 18px;
+	padding:0 65px;
+}

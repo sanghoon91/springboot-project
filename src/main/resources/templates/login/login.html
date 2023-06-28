@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org"
+	th:replace="~{layout/common::layout(~{this::head}, ~{this::main})}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+    </head>
+    <main>
+		<p>
+       		<input type="text" placeholder="아이디">
+    	</p>
+       	<p>
+        	<input type="password" placeholder="비밀번호">
+       	</p>
+       	<p>
+        	<button type="button">로그인</button>
+       	</p>
+    </main>
+</html>
