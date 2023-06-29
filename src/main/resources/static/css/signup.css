@@ -1,17 +1,61 @@
 @charset "UTF-8";
 
 .signup-up-area{
-	width:900px;
+	width:1200px;
 	margin: 0 auto;
 	height: 62px;
 	border-bottom: solid 2px black;
+	padding-top: 30px;
+	font-size: 32px;
 }
 .view-size{
-	width:900px;
+	width:1200px;
+	margin: 0 auto;
+}
+.view-size form ul li{
+	width: 550px;
 	margin: 0 auto;
 }
 label{
 	display:inline-block;
-	width:90px;
-	border-right: solid 1px red;
+	width:150px;
+	
+	height: 46px;
+	margin:auto;
 }
+
+
+form>ul{
+	margin: 0 auto;
+	padding: 20px;
+	padding-top:40px;	
+}
+form>ul>li:first-of-type>input{
+	height:35px;
+	font-size: 17px;
+	padding-left: 10px;
+	width:160px;
+}
+form>ul>li:not(:first-of-type)>input{
+	height: 35px;
+	font-size: 17px;
+	padding-left: 10px;
+	width: 245px;
+}
+
+
+.id button{
+	width: 80px;
+	height: 38px;
+	
+	
+	
+}
+.btn-st{
+	width : 180px;
+	height: 40px;
+	margin-top: 20px;
+	font-size: 20px; 
+	letter-spacing: 5px;
+}
+
