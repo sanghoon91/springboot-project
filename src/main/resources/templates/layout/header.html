@@ -8,10 +8,15 @@
 		    	<div class="logo">
 		    		<i><a href="/">장원재 홈페이지</a></i>
 		    	</div>
-		    	    	
-		    	<div class="up-right-area flex end">
+		    	<span sec:authentication="name"></span>	
+		    	<div sec:authorize="isAnonymous()" class="up-right-area flex end">
 			    		<a href="/login">로그인</a>		    	
 				    	<a href="/signup">회원가입</a>
+			    </div>
+			    <div sec:authorize="isAuthenticated()">
+			    	<form>
+			    		<button class="logout-btn">로그아웃</button>
+			    	</form>
 			    </div>
 		    </div>
 	    	<div class="down-area flex center">

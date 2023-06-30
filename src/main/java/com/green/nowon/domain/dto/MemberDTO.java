@@ -11,6 +11,7 @@ public class MemberDTO {
 	private String member;
 	private String password;
 	private String email;
+	private String name;
 	private String phone;
 	private String birth;
 	
