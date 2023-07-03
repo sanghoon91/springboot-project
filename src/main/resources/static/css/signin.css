@@ -14,11 +14,11 @@
 	margin: 0 auto;
 }
 
-.view-size p{
+.view-size>form>p{
 	width:409px;
 	margin: 0 auto;
 }
-.view-size p:first-of-type{
+.view-size>form>p:first-of-type{
 	padding-top: 60px;
 	
 }

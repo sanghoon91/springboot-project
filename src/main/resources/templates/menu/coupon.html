@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org"
+	th:replace="~{layout/common::layout(~{this::head}, ~{this::main})}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="/css/coupon.css">
+    </head>
+    <main>
+    	<form id="form-search" class="flex center">
+	    	<input type="search" name="query" placeholder="쿠폰번호를 입력하세요">
+			<button type="button" id="btn-search">검색</button>
+		</form>
+    </main>
+</html>

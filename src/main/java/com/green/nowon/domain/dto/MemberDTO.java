@@ -1,5 +1,12 @@
 package com.green.nowon.domain.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.green.nowon.security.MyRole;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,5 +21,19 @@ public class MemberDTO {
 	private String name;
 	private String phone;
 	private String birth;
+	
+	private Set<MyRole> roles=new HashSet<>();
+	
+	
+	public MemberDTO addRole(MyRole myRole) {
+		roles.add(myRole);
+		return this;
+	}
+
+	
+	public MemberDTO toEncoder(PasswordEncoder encoder) {
+	  password=encoder.encode(password); return this; 
+	  }
+	 
 	
 }

@@ -18,6 +18,9 @@
 		       	<p>
 		        	<input type="password" name="password" placeholder="비밀번호">
 		       	</p>
+		       	<div th:if="${param.error}">
+						<p>아이디 혹은 비밀번호가 올바르지 않습니다.</p>
+				</div>
 		       	<p>
 		        	<button>로그인</button>
 		       	</p>

@@ -7,7 +7,9 @@
 	insert into member(member, password, name, email, phone, birth)
 	values(#{member}, #{password}, #{name}, #{email}, #{phone}, #{birth})
 </insert>
-
+<select id="findByMember" resultType="com.green.nowon.domain.dto.MemberDTO">
+	select * from member where member=#{member}
+</select>
 
 
 </mapper>

@@ -8,13 +8,21 @@
 		    	<div class="logo">
 		    		<i><a href="/">장원재 홈페이지</a></i>
 		    	</div>
-		    	<span sec:authentication="name"></span>	
+		    	
+		    	
 		    	<div sec:authorize="isAnonymous()" class="up-right-area flex end">
-			    		<a href="/login">로그인</a>		    	
-				    	<a href="/signup">회원가입</a>
+			    		
+			    		<div>
+				    		<a href="/login">로그인</a>		    	
+					    	<a href="/signup">회원가입</a>
+				    	</div>
 			    </div>
-			    <div sec:authorize="isAuthenticated()">
-			    	<form>
+			    <div sec:authorize="isAuthenticated()" class="flex">
+			    	<div class="username">
+			    		<span sec:authentication="name"></span>	
+			    		<span class="nim">님</span>	
+		    		</div>
+			    	<form action="/logout" method="post">
 			    		<button class="logout-btn">로그아웃</button>
 			    	</form>
 			    </div>
@@ -25,7 +33,7 @@
 	    				<span><a href="">메뉴</a></span>
 	    			</li>
 	    			<li>
-	    				<span><a href="">e-쿠폰</a></span>
+	    				<span><a href="/coupon">e-쿠폰</a></span>
 	    			</li>
 	    			<li>
 	    				<span><a href="">상품권 선물</a></span>

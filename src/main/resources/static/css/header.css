@@ -19,7 +19,13 @@
 .up-area>.up-right-area>a:nth-of-type(1){
 	margin-right: 20px;
 }
-
+.username{
+	text-align: center;
+}
+.nim{
+	margin-right: 10px;
+	text-align: center;
+}
 .up-area>.up-right-area>a{
 	height: 25px;
 	text-align: center;
