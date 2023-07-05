@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org"
+	th:replace="~{layout/common::layout(~{this::head}, ~{this::main})}">
+    <head>
+      
+        <link rel="stylesheet" href="/css/qna.css">
+        <script src="/js/qna.js"></script>
+    </head>
+    <main>
+        <div class="qna-up-area">
+			<h2>고객센터</h2>
+			<div>
+				<ul class="flex">
+					<li><a href="/faq" class="faq">자주하는 질문</a></li>
+					<li><a href="/qna-board" class="qna">문의하기</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="view-size">
+			<div class="wrap">
+				<div>		    		
+					<!-- /////////////////////////////////////////// -->
+					<!-- js/admin/menu.js-memuItemClicked()비동기로처리 -->
+					<!-- /////////////////////////////////////////// -->
+					<dl class="menu-wrap">
+						<dt class="menu">
+							예약주문은 어디서 하나요?
+						</dt>
+						<dd>
+							<div>등록하기</div>
+							
+						</dd>
+					</dl>
+					<dl class="menu-wrap">
+						<dt class="menu">
+							<span>음료만 주문 가능한가요?</span>
+						</dt>
+						<dd>
+							<div>등록하기</div>
+							
+						</dd>
+					</dl>
+					<dl class="menu-wrap">
+						<dt class="menu">
+							<span>전 매장 가격은 같은가요?</span>
+						</dt>
+						<dd>
+							<div>등록</div>
+							
+						</dd>
+					</dl>
+					<dl class="menu-wrap">
+						<dt class="menu">
+							<span>결제수단에 현장결제를 선택할수 없어요</span>
+						</dt>
+						<dd>
+							<div>등록</div>
+							
+						</dd>
+					</dl>
+					
+	    		</div>
+    		</div>
+       	</div>
+    </main>
+</html>

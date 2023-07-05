@@ -37,6 +37,9 @@ public class MainController {
 	public String coupon() {
 		return "menu/coupon";
 	}
-	
+	@GetMapping("/qna")
+	public String qna() {
+		return "qna/qna";
+	}
 	
 }
