@@ -4,6 +4,8 @@
 $(function(){
 	$(".qna-up-area a").click(qnaClicked);	
 	$(".menu").click(menuClicked);
+	$(".wrap a").click(qnaClicked);
+	
 })
 
 function qnaClicked(event){
@@ -17,6 +19,8 @@ function qnaClicked(event){
 	)
 }
 
+
+
 function menuClicked(){
 	
 	var check=$(this).hasClass("open");
@@ -25,3 +29,17 @@ function menuClicked(){
 		$(this).addClass("open");
 	}
 }
+
+function qnaSubmitted(){
+	var formData= $("#form-qna-write").serialize();
+	$.ajax({
+		url:"/qna-board/write",
+		type:"POST",
+		data: formData,
+		success:function(){
+			$("a[href='/qna-board']").trigger("click");
+			alert("등록")
+		}
+	});
+}
+
