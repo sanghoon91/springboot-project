@@ -26,7 +26,9 @@ public class QnaController {
 	@ResponseBody
 	@GetMapping("/qna-board")
 	public ModelAndView qnaBoard() {
-		return new ModelAndView("qna/qnaBoard");
+		
+		return service.qnaList();
+		//return new ModelAndView("qna/qnaBoard");
 	}
 	
 	@ResponseBody
