@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.nowon.domain.dao.CouponMapper">
 
-<select id="findCoupon" resultMap="com.green.nowon.domain.dto.CouponDTO">
+<select id="findCoupon" resultType="com.green.nowon.domain.dto.CouponDTO">
 	select * from coupon where name=#{query}
 </select>
 

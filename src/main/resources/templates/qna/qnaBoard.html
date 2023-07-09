@@ -2,6 +2,7 @@
 <html xmlns:th="//www.thymeleaf.org">
     <head>
        <script src="/js/qna.js"></script>
+       <link rel="stylesheet" href="/css/qnaBoard.css">
     </head>
    
     	
@@ -14,17 +15,44 @@
 			    			<td>작성자</td>
 			    			<td>작성일</td>    			
 			    		</tr>
-			    		<tr>
-			    			<td>글번호</td>
-			    			<td>제목</td>
-			    			<td>작성자</td>
-			    			<td>작성일</td>    			
+			    		<tr th:each="dto:${list}">
+			    			<td th:text="${dto.no}">글번호</td>			    			
+			    			<td >
+			    			<a th:text="${dto.title}" th:href="|/qna-board/${dto.no}">제목</a>
+			    			</td>
+			    			<td th:text="${dto.writer}">작성자</td>
+			    			<td th:text="${dto.createdDate}">작성일</td>    			
 			    		</tr>
 			    	</table> 
 		    	</div>
+		    	<div id="page-wrap" class="flex">
+	<ul th:if="${pd.from>1}">
+		<li th:value="${pd.from-1}">
+			<a class="box" href="#">&lt;</a>
+		</li>
+	</ul>
+	<ol class="flex">
+		
+		<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
+			<a class="box" href="#" th:text="${pno}"></a>
+		</li>
+	</ol>
+	<ul th:if="${pd.to<pd.tot}">
+		<li th:value="${pd.to+1}">
+			<a class="box" href="#">&gt;</a>
+		</li>
+	</ul>
+	
+</div>
 		    	<a href="/qna-board/write">작성</a> 
 	    	</div>   
     	 
-    	 
+<script type="text/javascript">
+	$("#board-list").find("a").click(function(event){
+		event.preventDefault();
+		//alert($(this).parent().val())
+		btnSearchClicked($(this).parent().val());
+	});
+</script>    	 
     
 </html>

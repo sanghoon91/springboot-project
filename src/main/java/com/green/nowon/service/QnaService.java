@@ -8,6 +8,8 @@ public interface QnaService {
 
 	void saveProcess(QnaSaveDTO dto);
 
-	ModelAndView qnaList();
+	ModelAndView qnaList(int page);
+
+	void detailProcess(long no);
 
 }

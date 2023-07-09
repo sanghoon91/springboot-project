@@ -1,6 +1,7 @@
 package com.green.nowon.domain.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +13,10 @@ public interface QnaMapper {
 
 	void save(QnaSaveDTO dto);
 
-	List<QnaBoardDTO> findByWriter();
+	List<QnaSaveDTO> findByWriter();
+
+	Optional<QnaSaveDTO> findByNo(long no);
+
+	int countAll();
 
 }

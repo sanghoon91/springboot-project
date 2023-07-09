@@ -1,8 +1,12 @@
 package com.green.nowon.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,12 +26,28 @@ public class QnaController {
 	public ModelAndView faq() {
 		return new ModelAndView("qna/faq");
 	}
-	
+	/*
 	@ResponseBody
 	@GetMapping("/qna-board")
 	public ModelAndView qnaBoard() {
 		
 		return service.qnaList();
+		//return new ModelAndView("qna/qnaBoard");
+	}
+	*/
+	@ResponseBody
+	@GetMapping("/qna-board")
+	public ModelAndView qnaBoard() {
+		
+		return new ModelAndView("qna/board/page");
+		//return new ModelAndView("qna/qnaBoard");
+	}
+	
+	@ResponseBody
+	@PatchMapping("/qna-board")
+	public ModelAndView qnaList(@RequestParam(defaultValue = "1") int page) {
+		
+		return service.qnaList(page);
 		//return new ModelAndView("qna/qnaBoard");
 	}
 	
@@ -43,4 +63,12 @@ public class QnaController {
 		service.saveProcess(dto);
 		
 	}
+	@ResponseBody
+	@GetMapping("/qna-board/{no}")
+	public ModelAndView qnaBoard(@PathVariable long no) {
+		service.detailProcess(no);
+		return new ModelAndView("qna/board/detail");
+		//return new ModelAndView("qna/qnaBoard");
+	}
+	
 }

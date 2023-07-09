@@ -11,5 +11,13 @@
 	<insert id="save">
 		insert into board(title, content, writer, email) values(#{title},#{content},#{writer},#{email})
 	</insert>
-
+	<select id="findByWriter" resultType="com.green.nowon.domain.dto.QnaSaveDTO">
+		select * from board 
+	</select>
+	<select id="findByNo" resultType="com.green.nowon.domain.dto.QnaSaveDTO">
+		select * from board where no=#{no}
+	</select>
+	<select id="countAll">
+		select count(*) from board
+	</select>
 </mapper>

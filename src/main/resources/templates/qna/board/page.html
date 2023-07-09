@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org">
+	<head>
+	<script src="/js/qna.js"></script>
+       <link rel="stylesheet" href="/css/qnaBoard.css">
+		<script type="text/javascript">
+			$(function(){
+				$("form").submit(function(event){
+					event.preventDefault();
+				})
+				$("#btn-search").click(function(){
+					btnSearchClicked(1);
+				});
+				
+				restBoardList(1)
+			});			
+				
+			
+			function restBoardList(page){
+				$.ajax({
+					url:"/qna-board",
+					type: "PATCH",
+					data:{page:page},
+					success:function(result){
+						$("#board-list").html(result);
+					}
+					
+				});
+			}
+		</script>
+		<link rel="stylesheet" href="/css/rest-board.css">
+	</head>
+	<main>
+		<h1>메인영역</h1>
+		
+		<div>
+			
+		</div>
+		<div id="board-list">
+			list.html 삽입
+		</div>
+	</main>
+</html>
