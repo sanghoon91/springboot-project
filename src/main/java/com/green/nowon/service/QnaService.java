@@ -1,5 +1,6 @@
 package com.green.nowon.service;
 
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.green.nowon.domain.dto.QnaSaveDTO;
@@ -10,6 +11,6 @@ public interface QnaService {
 
 	ModelAndView qnaList(int page);
 
-	void detailProcess(long no);
+	void detailProcess(long no, Model model);
 
 }

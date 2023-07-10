@@ -20,4 +20,7 @@
 	<select id="countAll">
 		select count(*) from board
 	</select>
+	<select id="qnaBoardDetail" resultType="com.green.nowon.domain.dto.QnaSaveDTO">
+		select * from board where no=#{no}
+	</select>
 </mapper>

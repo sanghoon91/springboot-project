@@ -63,12 +63,14 @@ public class QnaController {
 		service.saveProcess(dto);
 		
 	}
-	@ResponseBody
+	
 	@GetMapping("/qna-board/{no}")
-	public ModelAndView qnaBoard(@PathVariable long no) {
-		service.detailProcess(no);
-		return new ModelAndView("qna/board/detail");
+	public String qnaBoard(@PathVariable long no,Model model) {
+		service.detailProcess(no, model);
+		return "qna/board/detail";
 		//return new ModelAndView("qna/qnaBoard");
 	}
+	
+	
 	
 }

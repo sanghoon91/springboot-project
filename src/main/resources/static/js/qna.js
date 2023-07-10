@@ -18,7 +18,14 @@ function qnaClicked(event){
 		}
 	)
 }
-
+function qnaBoardDetail(no){
+	$.ajax({
+		url:`/qna-board/${no}`,
+		success: function(result){
+			$(".wrap").html(result)
+		}
+	})
+}
 
 
 function menuClicked(){

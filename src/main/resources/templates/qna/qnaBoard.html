@@ -3,8 +3,22 @@
     <head>
        <script src="/js/qna.js"></script>
        <link rel="stylesheet" href="/css/qnaBoard.css">
+       <script type="text/javascript">
+       function btnSearchClicked(page){
+			
+			var data="&page="+page;
+			$.ajax({
+				url:"/qna-board",
+				type: "PATCH",
+				data:{page:page},
+				success:function(result){
+					$(".wrap").html(result);
+				}
+			});
+		}
+       </script>
     </head>
-   
+   	
     	
 	    	<div class="wrap">
 		    	<div class="write">
@@ -18,7 +32,7 @@
 			    		<tr th:each="dto:${list}">
 			    			<td th:text="${dto.no}">글번호</td>			    			
 			    			<td >
-			    			<a th:text="${dto.title}" th:href="|/qna-board/${dto.no}">제목</a>
+			    			<a th:text="${dto.title}" th:onclick="|qnaBoardDetail(${dto.no})|">제목</a>
 			    			</td>
 			    			<td th:text="${dto.writer}">작성자</td>
 			    			<td th:text="${dto.createdDate}">작성일</td>    			
@@ -43,16 +57,17 @@
 		</li>
 	</ul>
 	
-</div>
-		    	<a href="/qna-board/write">작성</a> 
-	    	</div>   
-    	 
+	</div>
+		<a href="/qna-board/write">작성</a> 
+   	</div>  
+   	 
 <script type="text/javascript">
-	$("#board-list").find("a").click(function(event){
+	$("#page-wrap").find("a").click(function(event){
 		event.preventDefault();
-		//alert($(this).parent().val())
-		btnSearchClicked($(this).parent().val());
+		alert($(this).parent().attr("value"));
+		btnSearchClicked($(this).parent().attr("value"));
 	});
 </script>    	 
+ 
     
 </html>
