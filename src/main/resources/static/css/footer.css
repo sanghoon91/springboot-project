@@ -1,1 +1,7 @@
 @charset "UTF-8";
+
+footer {
+	padding-top: 30px;
+	border-top: 1px solid #393939;
+	margin-top: 40px;
+}

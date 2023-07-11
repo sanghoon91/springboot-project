@@ -84,3 +84,15 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+
+.order{
+	margin-top: 20px;
+}
+.order > button{
+	width: 120px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #ff143c;
+	border: 1px soild;
+}
+

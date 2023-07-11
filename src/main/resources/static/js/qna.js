@@ -2,9 +2,12 @@
  * 
  */
 $(function(){
-	$(".qna-up-area a").click(qnaClicked);	
+	//qna 자주하는질문 문의하기
+	$(".qna-up-area a").click(qnaClicked)
+	//faq 열고닫기
 	$(".menu").click(menuClicked);
-	$(".wrap a").click(qnaClicked);
+	
+	
 	
 })
 

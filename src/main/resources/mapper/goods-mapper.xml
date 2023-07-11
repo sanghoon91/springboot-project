@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.nowon.domain.dao.GoodsMapper">
+	
+	<!-- goods테이블에 데이터 저장후 auto_increament된 no의 pk값을 GoodsSaveDTO에도 저장한다. -->
+	<insert id="save" useGeneratedKeys="true" keyProperty="no" parameterType="com.green.nowon.domain.dto.GoodsSaveDTO">
+		insert into goods(title,price,content)
+		values(#{title},#{price},#{content})
+	</insert>
+	<insert id="saveImage">
+		insert into goods_image(bucket_key, org_name, def, gno)
+		values(#{bucketKey}, #{orgName}, #{def}, #{gno})
+	</insert>
+</mapper>

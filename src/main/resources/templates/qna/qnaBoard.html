@@ -4,8 +4,15 @@
        <script src="/js/qna.js"></script>
        <link rel="stylesheet" href="/css/qnaBoard.css">
        <script type="text/javascript">
-       function btnSearchClicked(page){
-			
+      
+       $(function(){
+    	   btnSearchClicked(page);
+       
+       })
+       
+       
+       function btnSearchClicked(page){	
+    	   event.preventDefault();
 			var data="&page="+page;
 			$.ajax({
 				url:"/qna-board",
@@ -40,26 +47,26 @@
 			    	</table> 
 		    	</div>
 		    	<div id="page-wrap" class="flex">
-	<ul th:if="${pd.from>1}">
-		<li th:value="${pd.from-1}">
-			<a class="box" href="#">&lt;</a>
-		</li>
-	</ul>
-	<ol class="flex">
-		
-		<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
-			<a class="box" href="#" th:text="${pno}"></a>
-		</li>
-	</ol>
-	<ul th:if="${pd.to<pd.tot}">
-		<li th:value="${pd.to+1}">
-			<a class="box" href="#">&gt;</a>
-		</li>
-	</ul>
-	
-	</div>
-		<a href="/qna-board/write">작성</a> 
-   	</div>  
+				<ul th:if="${pd.from>1}">
+					<li th:value="${pd.from-1}">
+						<a class="box" href="#">&lt;</a>
+					</li>
+				</ul>
+				<ol class="flex">
+					
+					<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
+						<a class="box" href="#" onclick="btnSearchClicked()" th:text="${pno}"></a>
+					</li>
+				</ol>
+				<ul th:if="${pd.to<pd.tot}">
+					<li th:value="${pd.to+1}">
+						<a class="box" href="#">&gt;</a>
+					</li>
+				</ul>
+				
+				</div>
+					<a href="/qna-board/write">작성</a> 
+			</div>  
    	 
 <script type="text/javascript">
 	$("#page-wrap").find("a").click(function(event){

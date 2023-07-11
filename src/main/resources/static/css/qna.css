@@ -55,3 +55,7 @@ dt:after{
 dt.open::after{
 	background-image: url("/images/expand_less.svg");
 }
+.menu-wrap > dd {
+	font-size: 12px;
+	padding: 30px 0;
+}
