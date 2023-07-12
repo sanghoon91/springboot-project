@@ -6,11 +6,16 @@
 	
 	<!-- goods테이블에 데이터 저장후 auto_increament된 no의 pk값을 GoodsSaveDTO에도 저장한다. -->
 	<insert id="save" useGeneratedKeys="true" keyProperty="no" parameterType="com.green.nowon.domain.dto.GoodsSaveDTO">
-		insert into goods(title,price,content)
+		insert into products(name,price,content)
 		values(#{title},#{price},#{content})
 	</insert>
 	<insert id="saveImage">
-		insert into goods_image(bucket_key, org_name, def, gno)
+		insert into products_image(bucket_key, org_name, def, gno)
 		values(#{bucketKey}, #{orgName}, #{def}, #{gno})
 	</insert>
+	<select id="findAll" resultType="com.green.nowon.domain.dto.GoodsListDTO">
+		select * from products p
+		join products_image i on p.no=i.gno
+		where i.def=1
+	</select>
 </mapper>

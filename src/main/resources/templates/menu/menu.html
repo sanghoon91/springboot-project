@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org"
+	th:replace="~{layout/common::layout(~{this::head}, ~{this::main})}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="/css/menu.css">
+    </head>
+    <main>
+        <ul class="grid-container flex center">
+		<li th:each="dto:${list}" th:value="${dto.no}" th:onclick="|goodsDetail(${dto.no})|">
+			<img th:src="${dto.defImg}" height="300px;">
+			<div>
+				<p th:text="${dto.name}"></p>
+				<p th:text="${dto.price}"></p>
+				<p th:text="${dto.content}"></p>
+				
+				
+			</div>
+		</li>
+	</ul>
+	<div>아니왜안나와</div>
+    </main>
+</html>

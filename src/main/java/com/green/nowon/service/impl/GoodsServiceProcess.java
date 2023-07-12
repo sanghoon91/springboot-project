@@ -1,8 +1,15 @@
 package com.green.nowon.service.impl;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dao.GoodsMapper;
+import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.domain.dto.GoodsSaveDTO;
 import com.green.nowon.domain.dto.S3UploadDTO;
 import com.green.nowon.service.FileUploadService;
@@ -17,6 +24,9 @@ public class GoodsServiceProcess implements GoodsService{
 	private final GoodsMapper goodsMapper;
 	private final FileUploadService fileService;
 	
+	@Value("${cloud.aws.s3.domain}")
+	private String domain;
+	
 	@Override
 	public void save(GoodsSaveDTO dto) {
 		//1.상품정보 저장
@@ -27,6 +37,15 @@ public class GoodsServiceProcess implements GoodsService{
 			goodsMapper.saveImage(uploadResult.gno(dto.getNo()));
 		});
 		
+		
+	}
+
+	@Override
+	public void listProcess(Model model) {
+		List<GoodsListDTO> result=goodsMapper.findAll().stream()
+							.map(dto->dto.defImg(domain))
+							.collect(Collectors.toList());
+		model.addAttribute("list", result);			
 		
 	}
 

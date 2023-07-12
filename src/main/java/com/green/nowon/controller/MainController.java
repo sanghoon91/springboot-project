@@ -1,6 +1,7 @@
 package com.green.nowon.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.green.nowon.domain.dto.MemberDTO;
+import com.green.nowon.service.GoodsService;
 import com.green.nowon.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -17,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class MainController {
 	
 	private final MemberService service;
+	private final GoodsService gc;
 	
 	@GetMapping("/login")
 	public String login() {
@@ -41,5 +44,9 @@ public class MainController {
 	public String qna() {
 		return "qna/qna";
 	}
-	
+	@GetMapping("/menu")
+	public String menuList(Model model) {
+		gc.listProcess(model);
+		return "menu/menu";
+	}
 }

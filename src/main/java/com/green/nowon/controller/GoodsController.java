@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.green.nowon.domain.dto.GoodsSaveDTO;
 import com.green.nowon.service.FileUploadService;
@@ -32,6 +33,11 @@ public class GoodsController {
 		service.save(dto);
 		//System.out.println(dto);
 		return true;
+	}
+	@ResponseBody
+	@GetMapping("/admin/goods/new")
+	public ModelAndView write() {
+		return new ModelAndView("admin/admin");
 	}
 	
 	@ResponseBody

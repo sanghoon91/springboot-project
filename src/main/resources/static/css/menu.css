@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.grid-container{
+	width:1200px;
+	
+	margin: 0 auto;
+	padding-top: 40px;
+}
+
+p {
+	margin-top: 20px;
+}
+
+
+
+main > ul> li{
+	margin-right: 30px;
+}
