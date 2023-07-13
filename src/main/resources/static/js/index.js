@@ -13,6 +13,10 @@ function plusSlides(n) {
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
+window.onload=function(){
+	let slideIndex =1;
+	showSlides(slideIndex);
+};
 
 function showSlides(n) {
   let i;

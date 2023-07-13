@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dao.GoodsMapper;
+import com.green.nowon.domain.dto.GoodsDetailDTO;
+import com.green.nowon.domain.dto.GoodsImgListDTO;
 import com.green.nowon.domain.dto.GoodsListDTO;
 import com.green.nowon.domain.dto.GoodsSaveDTO;
 import com.green.nowon.domain.dto.S3UploadDTO;
@@ -47,6 +49,17 @@ public class GoodsServiceProcess implements GoodsService{
 							.collect(Collectors.toList());
 		model.addAttribute("list", result);			
 		
+	}
+
+	@Override
+	public void detailProcess(long goodsNo, Model model) {
+		GoodsDetailDTO detail= goodsMapper.detail(goodsNo).orElseThrow();
+		model.addAttribute("detail", detail);
+		
+		List<GoodsImgListDTO> imgs=goodsMapper.imageByDetailNo(goodsNo).stream()
+				.map(dto->dto.url(domain))//url 완성 domain+bucketKey
+				.collect(Collectors.toList());
+		model.addAttribute("imgs",imgs);
 	}
 
 }

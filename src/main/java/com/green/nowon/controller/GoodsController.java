@@ -3,7 +3,9 @@ package com.green.nowon.controller;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,6 +36,12 @@ public class GoodsController {
 		//System.out.println(dto);
 		return true;
 	}
+	@GetMapping("/goods/{goodsNo}")
+	public String detail(@PathVariable long goodsNo, Model model) {
+		service.detailProcess(goodsNo, model);
+		return "menu/detail";
+	}
+	
 	@ResponseBody
 	@GetMapping("/admin/goods/new")
 	public ModelAndView write() {
