@@ -1,0 +1,12 @@
+@charset "EUC-KR";
+td{
+	padding: 30px;
+	
+}
+tr td:first-of-type {
+	border-right:1px solid;
+}
+
+body > main > div.view-size > div{
+	border-bottom: 2px solid;
+}
