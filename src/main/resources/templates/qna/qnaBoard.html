@@ -55,7 +55,7 @@
 				<ol class="flex">
 					
 					<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
-						<a class="box" href="#" onclick="btnSearchClicked()" th:text="${pno}"></a>
+						<a class="box-page" href="#" onclick="btnSearchClicked()" th:text="${pno}"></a>
 					</li>
 				</ol>
 				<ul th:if="${pd.to<pd.tot}">
@@ -65,13 +65,14 @@
 				</ul>
 				
 				</div>
+				<div class="qna-write">
 					<a href="/qna-board/write">작성</a> 
+				</div>
 			</div>  
    	 
 <script type="text/javascript">
-	$("#page-wrap").find("a").click(function(event){
-		event.preventDefault();
-		alert($(this).parent().attr("value"));
+	$(".box-page").click(function(event){
+		event.preventDefault();		
 		btnSearchClicked($(this).parent().attr("value"));
 	});
 </script>    	 

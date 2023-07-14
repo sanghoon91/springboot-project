@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 
 import com.green.nowon.domain.dao.MemberMapper;
 import com.green.nowon.domain.dto.MemberDTO;
+import com.green.nowon.security.MyRole;
 import com.green.nowon.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ public class MemberServiceProcess implements MemberService{
 	public void saveMember(MemberDTO dto) {
 		dto.setPassword(encode.encode(dto.getPassword()));
 		mapper.save(dto);
+		mapper.saveRole(dto.getNo(), MyRole.USER);
 		
 	}
 

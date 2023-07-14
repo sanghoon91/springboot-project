@@ -26,7 +26,7 @@ public class MemberDTO {
 	
 	
 	public MemberDTO addRole(MyRole myRole) {
-		roles.add(myRole);
+		roles.add(myRole.USER);
 		return this;
 	}
 

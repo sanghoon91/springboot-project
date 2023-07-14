@@ -1,8 +1,10 @@
 package com.green.nowon.security;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 //Enum
+@Getter
 @RequiredArgsConstructor
 public enum MyRole {
 	

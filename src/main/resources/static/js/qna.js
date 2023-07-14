@@ -6,7 +6,7 @@ $(function(){
 	$(".qna-up-area a").click(qnaClicked)
 	//faq 열고닫기
 	$(".menu").click(menuClicked);
-	
+	$(".qna-write a").click(qnaClicked)
 	
 	
 })
