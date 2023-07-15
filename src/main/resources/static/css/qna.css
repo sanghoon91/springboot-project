@@ -11,6 +11,10 @@
 .qna-up-area h2{
 	font-size: 32px;
 }
+.qna-up-area > .question li{
+	
+	margin: 10px;
+}
 
 .view-size{
 	width:1200px;

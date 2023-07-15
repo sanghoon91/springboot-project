@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="//www.thymeleaf.org/extras/spring-security">
     <header>
 	    <div class="header">
 	    	<h1>헤더영역</h1>
@@ -15,7 +15,7 @@
 			    		<div>
 				    		<a href="/login">로그인</a>		    	
 					    	<a href="/signup">회원가입</a>
-					    	<a href="/qna">고객센터</a>
+					    	<a href="/qna">고객센터</a>					    	
 				    	</div>
 			    </div>
 			    <div sec:authorize="isAuthenticated()" class="flex">
@@ -24,9 +24,16 @@
 			    		<span class="nim">님</span>	
 		    		</div>
 			    	<form action="/logout" method="post">
-			    		<button class="logout-btn">로그아웃</button>
+			    		<button class="logout-btn">로그아웃</button>	
+			    		<a href="/admin/write">관리자 페이지</a>	
+			    		<a href="/qna">고객센터</a>		    		
 			    	</form>
+			    	<div sec:authorize="hasRole('ROLE_USER')" >
+						<a href="/boards">게시글</a>	
+										
+					</div>			    	
 			    </div>
+			    
 		    </div>
 	    	<div class="down-area flex center">
 	    		<ul class="flex">

@@ -7,16 +7,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.green.nowon.security.MyRole;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Builder
+
 @Getter
 @Setter
 public class MemberDTO {
 	
-	private long no;
+	private Long no;
 	private String member;
 	private String password;
 	private String email;

@@ -2,14 +2,17 @@ package com.green.nowon.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.green.nowon.domain.dto.QnaBoardDTO;
 import com.green.nowon.domain.dto.QnaSaveDTO;
 import com.green.nowon.service.QnaService;
 
@@ -71,6 +74,17 @@ public class QnaController {
 		//return new ModelAndView("qna/qnaBoard");
 	}
 	
+	@PostMapping("/board/{no}")
+	public String delete(@PathVariable("no")long no) {
+		service.deleteProcess(no);
+		return "redirect:/qna";
+	}
+	
+	@PutMapping("board/{no}")
+	public String update(@PathVariable("no") long no,QnaBoardDTO dto) {
+		service.updateProcess(no,dto);
+		return "redirect:/qna";
+	}
 	
 	
 }

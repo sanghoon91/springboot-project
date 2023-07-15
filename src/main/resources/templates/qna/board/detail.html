@@ -2,29 +2,86 @@
 <html xmlns:th="//www.thymeleaf.org">
 <head>
 	<link rel="stylesheet" href="/css/qnadetail.css">
+	<script type="text/javascript">
+	$(function(){
+		
+		$("#btn-update").click(clickedBtnUpdate);
+		
+	});
+	function clickedBtnUpdate(){
+		$("#basic").hide();
+		$("#form-update").show();
+	}
+	function clickedBtnCancel(){
+		$("#basic").show();
+		$("#form-update").hide();
+	}
+	</script>
 </head>
 <body>
-	<table>
-	        	<tr>
-	        		<td>글번호</td>
-	        		<td th:text="${detail.no}"></td>
-	        	</tr>
-	        	<tr>
-	        		<td>작성자</td>
-	        		<td th:text="${detail.writer}"></td>
-	        		
-	        		<td></td>
-	        	</tr>
-	        	<tr>
-	        		<td>제목</td>
-	        		<td th:text="${detail.title}"></td>
-	        	</tr>
-	        	<tr>
-	        		<td>내용</td>
-	        		<td th:text="${detail.content}"></td>
-	        	</tr>
-	        </table>
-
+	<form th:action="@{|/board/${detail.no}|}" method="post">
+		<table id="basic">
+		        	<tr>
+		        		<td>글번호</td>
+		        		<td th:text="${detail.no}"></td>
+		        	</tr>
+		        	<tr>
+		        		<td>작성자</td>
+		        		<td th:text="${detail.writer}"></td>
+		        		
+		        		<td></td>
+		        	</tr>
+		        	<tr>
+		        		<td>제목</td>
+		        		<td th:text="${detail.title}"></td>
+		        	</tr>
+		        	<tr>
+		        		<td>내용</td>
+		        		<td th:text="${detail.content}"></td>
+		        	</tr>
+		        	<tr>
+						<td colspan="2"><button type="button" id="btn-update">수정</button>
+								
+							<button>삭제</button>
+						</td>
+							
+					</tr>	
+		  </table>
+	  </form>
+	  
+	  				<!-- //////////수정//////////////// -->
+					<form id="form-update" th:action="@{|/board/${detail.no}|}" method="post" style="display: none;">
+							<table>						
+								<tr>
+									<th>글번호</th>
+									<td th:text="${detail.no}">글번호</td>
+								</tr>	
+								<tr>
+									<th>작성자</th>
+									<td th:text="${detail.writer}"></td>
+								</tr>	
+								<tr>
+									<th>글제목</th>
+									<td >
+										<input type="text" name="title" th:value="${detail.title}">
+									</td>
+								</tr>	
+								<tr>
+									<th>글내용</th>
+									<td>
+										<textarea  name="content">[(${detail.content})]</textarea>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="0">
+									<input type="hidden" name="_method" value="PUT"> 
+									<input type="hidden" name="no" th:value="${detail.no}">									
+									<button type="submit">수정완료</button>
+									<button type="button" onclick="clickedBtnCancel()">취소</button>
+									</td>
+								</tr>
+							</table>
+					</form>
 
 </body>
 </html>

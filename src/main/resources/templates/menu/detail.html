@@ -1,4 +1,9 @@
 <html xmlns:th="//www.thymeleaf.org">
+<head>
+<script src="https://cdn.iamport.kr/v1/iamport.js">	
+</script>
+<script src="/js/pay.js"></script>
+</head>
 	<section id="detail">
    		<h1>상세페이지</h1>
    		<div class="wrap">
@@ -37,7 +42,7 @@
    						</li>
    						<li>
    							<input id="name" type="hidden" th:value="${detail.name}">
-   							<input id="amount" type="hidden" th:value="${3000+detail.price}">
+   							<input id="amount" type="hidden" th:value="${detail.price}">
    							<button type="button">장바구니</button>
    							<button type="button" onclick="pay(this)">구매하기</button>
    						</li>

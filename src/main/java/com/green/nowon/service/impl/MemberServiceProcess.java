@@ -25,7 +25,7 @@ public class MemberServiceProcess implements MemberService{
 	public void saveMember(MemberDTO dto) {
 		dto.setPassword(encode.encode(dto.getPassword()));
 		mapper.save(dto);
-		mapper.saveRole(dto.getNo(), MyRole.USER);
+		mapper.saveRole(dto.getNo(), MyRole.ADMIN);
 		
 	}
 

@@ -6,7 +6,8 @@ import lombok.Data;
 
 @Data
 public class QnaBoardDTO {
-	long no;
-	String title;
-	LocalDateTime createdDate;
+	private long no;
+	private String title;
+	private String content;
+	private LocalDateTime createdDate;
 }

@@ -5,8 +5,17 @@ td{
 }
 tr td:first-of-type {
 	border-right:1px solid;
+	width: 80px;
+}
+table{
+	width: 1200px;
+	border-collapse: collapse;
 }
 
 body > main > div.view-size > div{
 	border-bottom: 2px solid;
+}
+
+tr{
+	border-bottom: 1px solid;
 }
