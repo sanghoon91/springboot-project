@@ -33,5 +33,40 @@
 .detail-info>li:first-of-type {
 	font-size: 20px;	
 }
+#detail > div > div.flex > ul > li > i{
+	margin-left: 10px;
+}
 
-
+body > main > ul > li > div > p:nth-child(1){
+	font-size: 24px;
+}
+body > main > ul > li > div > p:nth-child(3){
+	color: #a9a9a9;
+	font-weight: bold;
+}
+body > main > ul > li > div > div{
+	font-weight: bold;
+}
+#detail > div > div.flex > ul > li{
+	margin-bottom: 40px;
+}
+#detail > div > div.flex > ul > li:nth-child(1){
+	font-weight: bold;
+	margin-left: 20px;
+}
+#detail > div > div.flex > ul > li:nth-child(5) > button{
+	margin-left:20px;
+	width: 130px;
+	height: 40px;
+	font-size: 20px;
+	background-color: red;
+	border: none;
+	color: white;
+	
+}
+#detail > div > div.flex > ul > li> span{
+	margin-left: 20px;
+}
+#detail > div > div.flex > ul > li:nth-child(3) > i > input[type=number]{
+	margin-left: 10px;
+}

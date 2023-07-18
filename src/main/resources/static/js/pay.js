@@ -9,8 +9,7 @@ function pay(btnTag) {
 		var amount=$(btnTag).siblings("#amount").val();
 		var name=$(btnTag).siblings("#name").val();
 		
-		alert(amount);
-		alert(name);
+		
  	const IMP = window.IMP; // 생략 가능
 	IMP.init("imp06453507"); // 예: imp00000000a
     IMP.request_pay({

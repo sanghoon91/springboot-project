@@ -3,7 +3,7 @@ td{
 	padding: 30px;
 	
 }
-tr td:first-of-type {
+tr:not(:last-of-type) td:first-of-type {
 	border-right:1px solid;
 	width: 80px;
 }
@@ -18,4 +18,8 @@ body > main > div.view-size > div{
 
 tr{
 	border-bottom: 1px solid;
+}
+
+#form-update > table > tbody > tr > th{
+	width: 1px;
 }

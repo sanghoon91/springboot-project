@@ -14,7 +14,9 @@
 			<img th:src="${dto.defImg}" height="300px;">
 			<div>
 				<p th:text="${dto.name}"></p>
-				<p th:text="${dto.price}"></p>
+				<div class="flex">
+				<p th:text=" ${dto.price}"></p><p>원</p>
+				</div>
 				<p th:text="${dto.content}"></p>
 				
 				

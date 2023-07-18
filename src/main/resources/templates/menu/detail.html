@@ -23,7 +23,7 @@
    						<li class="flex between">
    							<span>판매가격</span>
    							<i>
-   							<span th:text="${#numbers.formatInteger(detail.price,3,'COMMA')}"></span>
+   							<span th:text=" ${#numbers.formatInteger(detail.price,3,'COMMA')}"></span>
    							<span>원</span>
    							</i>
    						</li>
@@ -37,14 +37,14 @@
    						<li class="flex between">   							
    							<span>구매금액</span>
    							<i>
-   							<span th:text="${#numbers.formatInteger(3000+detail.price,3,'COMMA')}"></span><span>원</span>
+   							<span th:text="${#numbers.formatInteger(detail.price,3,'COMMA')}"></span><span>원</span>
    							</i>
    						</li>
    						<li>
    							<input id="name" type="hidden" th:value="${detail.name}">
    							<input id="amount" type="hidden" th:value="${detail.price}">
-   							<button type="button">장바구니</button>
-   							<button type="button" onclick="pay(this)">구매하기</button>
+   							
+   							<button type="button" onclick="pay(this)">주문하기</button>
    						</li>
    					</ul>
    				</div>

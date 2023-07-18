@@ -32,10 +32,11 @@ p:nth-of-type(3) button{
 	margin-top: 20px;
 	background-color: red;
 	border: none;
+	color: white;
 }
 p:nth-of-type(4) button{
 	background-color: white;
-	border: 1px solid #a9a9a9;)
+	border: 1px solid #a9a9a9;
 }
 p>button{
 	display: inline-block;

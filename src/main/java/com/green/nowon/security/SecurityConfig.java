@@ -26,7 +26,7 @@ public class SecurityConfig {
 					.loginProcessingUrl("/loginProc")
 					.usernameParameter("member")
 					.passwordParameter("password")
-					.defaultSuccessUrl("/",true)
+					.defaultSuccessUrl("/menu",true)
 					.successHandler(mySuccessHandler())
 					
 					.permitAll()

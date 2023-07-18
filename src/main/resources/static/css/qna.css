@@ -63,3 +63,6 @@ dt.open::after{
 	font-size: 12px;
 	padding: 30px 0;
 }
+#board-list > div.write > table > tbody > tr:nth-child(1) > td:nth-child(1){
+	width: 60px;
+}
