@@ -47,23 +47,22 @@
 			    	</table> 
 		    	</div>
 		    	<div id="page-wrap" class="flex">
-				<ul th:if="${pd.from>1}">
-					<li th:value="${pd.from-1}">
-						<a class="box" href="#">&lt;</a>
-					</li>
-				</ul>
-				<ol class="flex">
-					
-					<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
-						<a class="box-page" href="#" onclick="btnSearchClicked()" th:text="${pno}"></a>
-					</li>
-				</ol>
-				<ul th:if="${pd.to<pd.tot}">
-					<li th:value="${pd.to+1}">
-						<a class="box" href="#">&gt;</a>
-					</li>
-				</ul>
-				
+					<ul th:if="${pd.from>1}">
+						<li th:value="${pd.from-1}">
+							<a class="box" href="#">&lt;</a>
+						</li>
+					</ul>
+					<ol class="flex center">
+						
+						<li th:each="pno:${#numbers.sequence(pd.from,pd.to)}" th:value="${pno}">
+							<a class="box-page" href="#" onclick="btnSearchClicked()" th:text="${pno}"></a>
+						</li>
+					</ol>
+					<ul th:if="${pd.to<pd.tot}">
+						<li th:value="${pd.to+1}">
+							<a class="box" href="#">&gt;</a>
+						</li>
+					</ul>					
 				</div>
 				<div class="qna-write">
 					<a href="/qna-board/write">작성</a> 
